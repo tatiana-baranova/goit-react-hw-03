@@ -2,10 +2,10 @@ import { useState } from 'react';
 import './App.css'
 import ContactList from './components/ContactList/ContactList';
 import SearchBox from './components/SearchBox/SearchBox';
+import ContactForm from './components/ContactForm/ContactForm';
 
 
 function App() {
-  
   const [contacts, setContacts] = useState([
     {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
   {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
@@ -18,14 +18,16 @@ function App() {
 
   const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
-
+  const addContact = (newContact) => {
+    setContacts((prev) => [...prev, newContact])
+  }
 
 
   return (
     <>
     <div>
   <h1 className="title">Phonebook</h1>
-  {/* <ContactForm /> */}
+        <ContactForm onAddContact={ addContact} />
   <SearchBox value={searchQuery}  onChange={setSearchQuery}/>
   <ContactList contacts={filteredContacts}/>
 </div>
