@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import './App.css'
+import ContactList from './components/ContactList/ContactList';
+
+
 function App() {
   
   const [contacts, setContacts] = useState([
@@ -14,9 +17,9 @@ function App() {
     <>
     <div>
   <h1 className="title">Phonebook</h1>
-  {/* <ContactForm />
-  <SearchBox />
-  <ContactList /> */}
+  {/* <ContactForm /> */}
+  {/* <SearchBox /> */}
+  <ContactList contacts={contacts}/>
 </div>
     </>
   )
