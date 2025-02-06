@@ -29,17 +29,17 @@ const ContactForm = ({ onAddContact }) => {
             validationSchema={validationSchema}
             onSubmit={handleSubmit} 
         >
-            <Form>
-                <div>
-                    <label htmlFor='name'>Name</label>
+            <Form className={s.container}>
+                <div className={s.form}>
+                    <label className={s.label} htmlFor='name'>Name</label>
                     <Field id="name" name="name" type="text" className={ s.input} />
-                <ErrorMessage name="name" component="div" className="error" />
+                <ErrorMessage name="name" component="div" className={s.error} />
                 </div>
 
-                <div>
-                    <label htmlFor="number">Number</label>
-                <Field id="number" name="number" type="text"  className={ s.input} />
-                <ErrorMessage name="number" component="div" className="error" />
+                <div className={s.form}>
+                    <label className={s.label} htmlFor="number">Number</label>
+                <Field id="number" name="number" type="tel" placeholder="xxx-xx-xx" className={ s.input} />
+                <ErrorMessage name="number" component="div" className={s.error} />
                 </div>
                 
                 <button type="submit" className={s.btn}>Add Contact</button>

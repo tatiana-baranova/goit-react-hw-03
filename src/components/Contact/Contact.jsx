@@ -2,7 +2,7 @@ import s from "./Contact.module.css"
 import { FaUserLarge } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 
-const Contact = ({ name, number, id }) => {
+const Contact = ({ name, number, id, onDelete }) => {
 
     return (
         <div className={s.contact}>
@@ -16,7 +16,7 @@ const Contact = ({ name, number, id }) => {
                     {number}
                 </li>
             </ul>
-            <button className={s.btn}>
+            <button className={s.btn} onClick={() => onDelete(id)}>
                 Delete
             </button>
         </div>

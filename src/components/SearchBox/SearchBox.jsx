@@ -3,7 +3,7 @@ import s from "./SearchBox.module.css"
 
 const SearchBox = ({ value, onChange }) => {
     return (
-        <div>
+        <div className={s.info}>
             <p className={s.text}>Find contacts by name</p>
             <div className={s.label}>
             <TbUserSearch size="22"/>
